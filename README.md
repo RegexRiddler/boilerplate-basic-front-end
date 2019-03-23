@@ -49,3 +49,8 @@ Starts a local server on http://localhost:3000 with live reload enabled.
 gulp watch
 ```
 Wathches any files for changes and reloads the browser on change and transpiles Sass if necessary.
+
+```bash
+gulp build
+``` 
+Same as default gulp command but without sourcemaps, ready for deployment.

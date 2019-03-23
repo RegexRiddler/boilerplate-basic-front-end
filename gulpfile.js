@@ -2,6 +2,8 @@
 
 const gulp = require('gulp');
 const sass = require('gulp-sass');
+const sourcemaps = require('gulp-sourcemaps');
+const autoprefixer = require('gulp-autoprefixer');
 const browserSync = require('browser-sync');
 
 // Copy HTML files fo dist folder
@@ -18,12 +20,25 @@ gulp.task('copyJs', callback => {
   callback();
 });
 
-// Transpile SASS to CSS
+// Transpile SASS to CSS with sourcemaps
 gulp.task('sass', callback => {
   gulp.src('./src/sass/**/*.{sass,scss}')
-    .pipe(sass().on('error', sass.logError))
+    .pipe(sourcemaps.init())
     .pipe(sass({outputStyle: 'compressed'}))
-    .pipe(gulp.dest('./dist'));
+    .pipe(sourcemaps.write())
+    .pipe(autoprefixer())
+    .pipe(gulp.dest('./dist'))
+    .on('error', sass.logError);
+  callback();
+});
+
+// Transpile SASS to CSS without sourcemaps
+gulp.task('sass-build', callback => {
+  gulp.src('./src/sass/**/*.{sass,scss}')
+    .pipe(sass({outputStyle: 'compressed'}))
+    .pipe(autoprefixer())
+    .pipe(gulp.dest('./dist'))
+    .on('error', sass.logError);
   callback();
 });
 
@@ -45,5 +60,8 @@ gulp.task('watch', callback => {
   callback();
 });
 
-// Default tasks
+// Build project for distibution
+gulp.task('build', gulp.series('copyHtml', 'copyJs', 'sass-build'));
+
+// Default task
 gulp.task('default', gulp.series('copyHtml', 'copyJs', 'sass', 'watch', 'serve'));
