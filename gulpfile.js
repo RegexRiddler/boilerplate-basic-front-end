@@ -41,7 +41,7 @@ gulp.task('watch', callback => {
   gulp.watch('./src/*.html', gulp.series('copyHtml'));
   gulp.watch('./src/js/**/*.js', gulp.series('copyJs'));
   gulp.watch('./src/sass/**/*.{sass,scss}', gulp.series('sass'));
-  gulp.watch('./src/**/*', )
+  gulp.watch('./src/**/*', browserSync.reload)
   callback();
 });
 

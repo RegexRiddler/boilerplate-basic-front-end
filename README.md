@@ -40,7 +40,6 @@ gulp sass
 ```
 Transpiles Sass files from ./src/sass folder or any of its sub directories, and outputs a compressed .css file to ./dist folder.
 
-
 ```bash
 gulp serve
 ```
