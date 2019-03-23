@@ -15,7 +15,7 @@ gulp.task('copyHtml', callback => {
 
 // Copy JS files to dist folder
 gulp.task('copyJs', callback => {
-  gulp.src('./js/**/*.js')
+  gulp.src('./src/js/**/*.js')
     .pipe(gulp.dest('./dist'));
   callback();
 });
