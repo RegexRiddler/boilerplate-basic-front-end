@@ -20,7 +20,7 @@ gulp.task('copyJs', callback => {
 
 // Transpile SASS to CSS
 gulp.task('sass', callback => {
-  gulp.src('./src/sass/**/*.sass')
+  gulp.src('./src/sass/**/*.{sass,scss}')
     .pipe(sass().on('error', sass.logError))
     .pipe(sass({outputStyle: 'compressed'}))
     .pipe(gulp.dest('./dist'));
@@ -40,7 +40,7 @@ gulp.task('serve', callback => {
 gulp.task('watch', callback => {
   gulp.watch('./src/*.html', gulp.series('copyHtml'));
   gulp.watch('./src/js/**/*.js', gulp.series('copyJs'));
-  gulp.watch('./src/sass/**/*.sass', gulp.series('sass'));
+  gulp.watch('./src/sass/**/*.{sass,scss}', gulp.series('sass'));
   gulp.watch('./src/**/*', )
   callback();
 });
