@@ -16,10 +16,37 @@ In your terminal change directory to the root of the boilerplate folder then typ
 ```bash
 yarn install
 ```
-Next we need to run Gulp tasks, this will start a local server with auto reloading and watch for file changes.
+Next we need to run Gulp tasks, this will start a local server with auto reloading, watch files for changes, and transpile Sass.
 ```bash
 gulp
 ```
 
 ### Step 3: Code away!
 That's it, happy coding!
+
+### Gulp tasks
+```bash
+gulp copyHtml
+```
+Copies HTML files from ./src folder.
+
+```bash
+gulp copyJs
+```
+Copies JS files from ./src/js folder or any of its sub directories.
+
+```bash
+gulp sass
+```
+Transpiles Sass files from ./src/sass folder or any of its sub directories, and outputs a compressed .css file to ./dist folder.
+
+
+```bash
+gulp serve
+```
+Starts a local server on http://localhost:3000 with live reload enabled.
+
+```bash
+gulp watch
+```
+Wathches any files for changes and reloads the browser on change and transpiles Sass if necessary.
