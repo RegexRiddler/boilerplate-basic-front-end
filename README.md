@@ -24,7 +24,7 @@ gulp
 ### Step 3: Code away!
 That's it, happy coding!
 
-### Gulp tasks
+## Gulp tasks
 ```bash
 gulp copyHtml
 ```
