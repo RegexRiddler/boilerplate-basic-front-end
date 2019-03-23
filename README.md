@@ -1,6 +1,6 @@
 # Basic Front-End Boilerplate
 ## A boilerplate for small projects using HTML, CSS, and Javascript
-This lightweight boilerplate uses Yarn for package management but there is no reason why you can't use NPM. Gulp is used for running tasks like watching files, transpiling sass, running local server, and building the project.
+This lightweight boilerplate uses Yarn for package management (but there is no reason why you can't use NPM) and Gulp for running tasks like watching files, transpiling sass, running local server, and building the project.
 
 ### License
 Released under the MIT license - http://opensource.org/licenses/MIT
