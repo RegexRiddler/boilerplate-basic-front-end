@@ -63,5 +63,8 @@ gulp.task('watch', callback => {
 // Build project for distibution
 gulp.task('build', gulp.series('copyHtml', 'copyJs', 'sass-build'));
 
+// Start, watches files for changes and transpiles Sass
+gulp.task('start', gulp.series('copyHtml', 'copyJs', 'sass'));
+
 // Default task
 gulp.task('default', gulp.series('copyHtml', 'copyJs', 'sass', 'watch', 'serve'));
